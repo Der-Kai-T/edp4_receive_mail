@@ -2,6 +2,9 @@
  
 A node.js tool to receive E-Mails with attachments and prepare them for use with EDP4 (https://www.einsatzleitsoftware.de/) "Einsatzserver" which can fetch mails themself but needs the information to be placed inside the mail-content not as an attachment. As the Feuerwehr Hamburg can only transmit them in an attached file this script was created.
 
+## Used Libarary
+This script is using https://www.npmjs.com/package/mail-listener5 and it's example code. Except: Debug Output to console deactivated and automatic attachment-store set to separate Folder (Debug purposes only), can and should be deactivated uppon release.
+
 ## Installation
 You need node.js to run this script. Visit https://nodejs.org/en to find out how to do this on your platform. This script doesn't need to run on the same machine as the EDP4-Server but it needs write-access to a folder on the server which is monitored by the EDP4-Einsatzserver.
 
@@ -39,3 +42,6 @@ Before starting the mail-listener, you need to create an ``credentials.json`` in
 ```
 
 Now you can run the script with ``node mail-listener.js``. It will automatically download all mails currently in the mailbox and prepare them for EDP4.
+
+## Known Bugs and Improvements to be made
+Currently the emails aren't remove so if you restart your script all mails will be downloaded again. On the Mail-Server I'm using the Trash is a subfolder to the inbox (don't know if this is the default), so just deleting them within an email-client doesn't help. EDP4 checks the transmitted "einsatznummer" so it will not create a new one but update the old one instead. Which means if you have  updated the adress for example, this change would be reversed.
