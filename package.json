@@ -1,0 +1,28 @@
+{
+  "name": "edp4_receive_mail",
+  "version": "1.0.0",
+  "description": "Receive Mails with Attachment and paste them for edp4 server",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Der-Kai-T/edp4_receive_mail.git"
+  },
+  "author": "Der-Kai-T",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Der-Kai-T/edp4_receive_mail/issues"
+  },
+  "homepage": "https://github.com/Der-Kai-T/edp4_receive_mail#readme",
+  "dependencies": {
+    "base64-stream": "^1.0.0",
+    "download-email-attachments": "^2.0.1",
+    "imap": "^0.8.19",
+    "mail-listener": "^0.7.1",
+    "mail-listener5": "^2.0.2",
+    "moment": "^2.29.3"
+  }
+}
