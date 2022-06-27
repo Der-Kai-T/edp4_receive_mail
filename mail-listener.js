@@ -9,7 +9,7 @@ var { MailListener } = require("mail-listener5");
 MailListener class as a property of module.exports.
 */
 
-const outpath = "Z:/einsatzdaten/";
+const outpath = "C:/einsatzdaten/";
 
 //Source:
 //https://www.npmjs.com/package/mail-listener5
@@ -27,7 +27,7 @@ var mailListener = new MailListener({
   debug: null, // Or your custom function with only one incoming argument. Default: null
   tlsOptions: { rejectUnauthorized: false },
   mailbox: "INBOX", // mailbox to monitor
-  searchFilter: ["ALL"], // the search filter being used after an IDLE notification has been retrieved
+  searchFilter: ["UNSEEN"], // the search filter being used after an IDLE notification has been retrieved
   markSeen: true, // all fetched email willbe marked as seen and not fetched next time
   fetchUnreadOnStart: true, // use it only if you want to get all unread email on lib start. Default is `false`,
   attachments: true, // download attachments as they are encountered to the project directory
@@ -82,8 +82,11 @@ mailListener.on("attachment", function(attachment, path, seqno){
     einsatz.einsatznummer   = txt_array[2];
     einsatz.strasse         = txt_array[3];
     einsatz.nummer          = txt_array[4];
+    einsatz.ort             = "HAMBURG";
+    
     txt_array.splice(0,5);
     einsatz.meldebild       = txt_array.join(" ");
+    
 
     
 
@@ -91,9 +94,10 @@ mailListener.on("attachment", function(attachment, path, seqno){
     if(stichworte.some(stichwort => {
       return stichwort.STICHWORT == einsatz.stichwort;
     })){
-
+      einsatz.einsatzart      = "N";
     }else{
       einsatz.stichwort = "NIL";
+      einsatz.einsatzart = "S";
       einsatz.meldebild = einsatz.stichwort + " " + einsatz.meldebild;
     }
     
