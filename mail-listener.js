@@ -80,13 +80,17 @@ mailListener.on("attachment", function(attachment, path, seqno){
     einsatz.alarmzeit       = txt_array[0];
     einsatz.stichwort       = txt_array[1];
     einsatz.einsatznummer   = txt_array[2];
-    einsatz.strasse         = txt_array[3];
-    einsatz.nummer          = txt_array[4];
+
+    txt_array.splice(0,3);
+    var rest                 = txt_array.join(" ");
+    
+    let rest_array          = rest.split(" - ");
+    einsatz.strasse         = rest_array[0];
     einsatz.ort             = "HAMBURG";
     
-    txt_array.splice(0,5);
-    einsatz.meldebild       = txt_array.join(" ");
-    
+    rest_array.splice(0,1);
+    einsatz.meldebild       = rest_array.join(" ");
+    einsatz.meldebild       = "HELS " + einsatz.einsatznummer + einsatz.meldebild;
 
     
 
