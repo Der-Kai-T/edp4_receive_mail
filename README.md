@@ -43,5 +43,8 @@ Before starting the mail-listener, you need to create an ``credentials.json`` in
 
 Now you can run the script with ``node mail-listener.js``. It will automatically download all mails currently in the mailbox and prepare them for EDP4.
 
+The mails are kept on the mailbox but marked read. The script will only process unread mails.
+
+The script was used during the event Schlagermove 2022 and worked without major problems. The parsing had to be adopted as the content of the files was slightly different to the one that was used for testing.
 ## Known Bugs and Improvements to be made
-Currently the emails aren't remove so if you restart your script all mails will be downloaded again. On the Mail-Server I'm using the Trash is a subfolder to the inbox (don't know if this is the default), so just deleting them within an email-client doesn't help. EDP4 checks the transmitted "einsatznummer" so it will not create a new one but update the old one instead. Which means if you have  updated the adress for example, this change would be reversed.
+Currently there aren't any.
