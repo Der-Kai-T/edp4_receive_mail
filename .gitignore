@@ -2,3 +2,4 @@
 creds.txt
 credentials.json
 node_modules/*
+credentials_test.json
