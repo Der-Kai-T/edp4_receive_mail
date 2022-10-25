@@ -47,4 +47,5 @@ The mails are kept on the mailbox but marked read. The script will only process 
 
 The script was used during the event Schlagermove 2022 and worked without major problems. The parsing had to be adopted as the content of the files was slightly different to the one that was used for testing.
 ## Known Bugs and Improvements to be made
-Currently there aren't any.
+Currently there aren't any known bugs. If you find some, please submit an issue.
+Preparations are being made to decode attached pdfs using the pdf-reader library (https://www.npmjs.com/package/pdfreader).
