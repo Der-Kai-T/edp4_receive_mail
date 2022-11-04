@@ -46,6 +46,13 @@ Now you can run the script with ``node mail-listener.js``. It will automatically
 The mails are kept on the mailbox but marked read. The script will only process unread mails.
 
 The script was used during the event Schlagermove 2022 and worked without major problems. The parsing had to be adopted as the content of the files was slightly different to the one that was used for testing.
+
+## PDF-Files ##
+PDF-Files can be processed, too. To do so, use the script ``mail-listener_pdf_ff_juechen.js`` and adapt it to your needs. Or create an issue and submit an example pdf to get support from me if I've got spare time. PDF-Processing uses the pdf-reader library (https://www.npmjs.com/package/pdfreader).
+
 ## Known Bugs and Improvements to be made
 Currently there aren't any known bugs. If you find some, please submit an issue.
-Preparations are being made to decode attached pdfs using the pdf-reader library (https://www.npmjs.com/package/pdfreader).
+
+
+## Disclaimer ##
+This application comes as is with no warranty. You are free to do whatever you like with the code, or whatever is allowed by the used librarys. If you want to participate in the development, feel free to do so. 
