@@ -1,7 +1,7 @@
 
 const {email, password, host, port} = require("./credentials_test.json");
 const fs = require("fs");
-
+const { PdfReader } = require("pdfreader");
 const stichworte = require("./stichworte.json");
 var { MailListener } = require("mail-listener5");   
 /*NOTE: A FUTURE VERSION (release date TBA) will not require ES6 destructuring or referring to the class after the require statement
@@ -78,7 +78,7 @@ mailListener.on("attachment", function(attachment, path, seqno){
         else if (!item){
             console.warn("end of file");
             //console.log(content);
-            process_content(content);
+            process_content(pdf_content);
           }
         else if (item.text) pdf_content.push(item.text);
       });
