@@ -19,10 +19,11 @@
   "homepage": "https://github.com/Der-Kai-T/edp4_receive_mail#readme",
   "dependencies": {
     "base64-stream": "^1.0.0",
-    "download-email-attachments": "^2.0.1",
+    "download-email-attachments": "^1.4.3",
     "imap": "^0.8.19",
     "mail-listener": "^0.7.1",
     "mail-listener5": "^2.0.2",
-    "moment": "^2.29.3"
+    "moment": "^2.29.3",
+    "pdfreader": "^1.2.11"
   }
 }
